@@ -178,12 +178,9 @@ public class gerenciador_tudo : MonoBehaviour
         if (fimDeJogo || mostrandoDesbloqueio)
             return;
 
-        voto13++;
-        AtualizarVotos();
-
-        // Verifica se chegou a hora de desbloquear outro personagem.
-        if (proximoPersonagem < personagens.Length && voto13 >= proximoDesbloqueio)
+        if (proximoPersonagem < personagens.Length && voto13 > 13)
         {
+            
             int numero = proximoPersonagem;
 
             proximoPersonagem++;
@@ -191,6 +188,37 @@ public class gerenciador_tudo : MonoBehaviour
 
             StartCoroutine(MostrarDesbloqueio(numero));
         }
+        if (proximoPersonagem < personagens.Length && voto13 > 26)
+        {
+            int numero = proximoPersonagem;
+
+            proximoPersonagem++;
+            proximoDesbloqueio += Mathf.Max(2, pontosParaDesbloquear);
+
+            StartCoroutine(MostrarDesbloqueio(numero));
+        }
+        if (proximoPersonagem < personagens.Length && voto13 > 39)
+        {
+            int numero = proximoPersonagem;
+
+            proximoPersonagem++;
+            proximoDesbloqueio += Mathf.Max(3, pontosParaDesbloquear);
+
+            StartCoroutine(MostrarDesbloqueio(numero));
+        }
+        if (proximoPersonagem < personagens.Length && voto13 > 52)
+        {
+            int numero = proximoPersonagem;
+
+            proximoPersonagem++;
+            proximoDesbloqueio += Mathf.Max(4, pontosParaDesbloquear);
+
+            StartCoroutine(MostrarDesbloqueio(numero));
+        }
+        voto13++;
+
+        AtualizarVotos();
+
     }
 
     IEnumerator MostrarDesbloqueio(int numero)
