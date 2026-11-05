@@ -1,114 +1,181 @@
-
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class gerenciador_tudo : MonoBehaviour
 {
-    public GameObject fundo, bt_jogar, bt_sair, bt_personagens, player, textoVoto, painel_personagens;
+    [Header("Interface do Menu")]
+    public GameObject fundo, bt_jogar, bt_sair, bt_personagens;
+    public GameObject painel_personagens, textoVoto;
 
-    public Sprite[] personagens;
+    [Header("Jogador")]
+    public GameObject player;
     public SpriteRenderer spritePlayer;
 
-    private int personagemEscolhido = 0;
-
-    public static int voto13;
-    public TMP_Text votoEscrito;
-
-    public SpawnObstaculo spawnar;
-
-    [Header("Desbloqueio de personagens")]
-    public GameObject painelDesbloqueio;
-    public Image imagemDesbloqueio;
+    [Header("Personagens")]
+    public Sprite[] personagens;
     public Button[] botoesPersonagens;
 
-    public int pontosParaDesbloquear = 5;
+    [Header("Pontuação")]
+    public TMP_Text votoEscrito;
+    public static int voto13;
+
+    [Header("Desbloqueio de Personagens")]
+    public GameObject painelDesbloqueio;
+    public Image imagemDesbloqueio;
+
+    [Header("DIFICULDADE DO JOGO")]
+    [Tooltip("Quantidade de pontos necessária para liberar cada personagem.")]
+    public int pontosParaDesbloquear = 13;
+
+    [Tooltip("Tempo que o aviso de personagem desbloqueado ficará na tela.")]
     public float tempoMostrarDesbloqueio = 3f;
+
+    [Tooltip("Quanto a velocidade dos obstáculos aumenta a cada desbloqueio.")]
     public float aumentoVelocidade = 1f;
 
+    [Header("Referências")]
+    public SpawnObstaculo spawnar;
+
+    private int personagemEscolhido = 0;
     private bool[] personagensDesbloqueados;
+
     private int proximoPersonagem = 1;
     private int proximoDesbloqueio;
+
     private bool mostrandoDesbloqueio;
     private bool fimDeJogo;
 
+    private Rigidbody2D rbPlayer;
+    private Vector3 posicaoInicialPlayer;
+
     public static gerenciador_tudo instancia;
+
 
     void Awake()
     {
-        // Permite que outros scripts encontrem o gerenciador.
         instancia = this;
-
-        // Garante que o jogo não comece pausado.
         Time.timeScale = 1f;
     }
+
 
     void Start()
     {
         voto13 = 0;
 
-        player.SetActive(false);
-        textoVoto.SetActive(false);
-        painel_personagens.SetActive(false);
+        if (player != null)
+        {
+            rbPlayer = player.GetComponent<Rigidbody2D>();
+            posicaoInicialPlayer = player.transform.position;
+            player.SetActive(false);
+        }
+
+        if (textoVoto != null)
+        {
+            textoVoto.SetActive(false);
+        }
+
+        if (painel_personagens != null)
+        {
+            painel_personagens.SetActive(false);
+        }
 
         if (painelDesbloqueio != null)
+        {
             painelDesbloqueio.SetActive(false);
+        }
 
-        // Carrega quais personagens já foram desbloqueados.
         personagensDesbloqueados = new bool[personagens.Length];
 
+        // Recupera os personagens salvos
         for (int i = 0; i < personagens.Length; i++)
         {
-            personagensDesbloqueados[i] = PlayerPrefs.GetInt("personagemDesbloqueado_" + i, i == 0 ? 1 : 0) == 1;
+            int desbloqueado = PlayerPrefs.GetInt("personagemDesbloqueado_" + i, 0);
+
+            if (i == 0)
+            {
+                desbloqueado = 1;
+                PlayerPrefs.SetInt("personagemDesbloqueado_0", 1);
+            }
+
+            personagensDesbloqueados[i] = desbloqueado == 1;
         }
 
-        // O primeiro personagem sempre fica disponível.
-        if (personagens.Length > 0)
-        {
-            personagensDesbloqueados[0] = true;
-            PlayerPrefs.SetInt("personagemDesbloqueado_0", 1);
-        }
+        PlayerPrefs.Save();
 
-        // Procura o próximo personagem que ainda está bloqueado.
+        // Procura o próximo personagem que ainda está bloqueado
         while (proximoPersonagem < personagens.Length && personagensDesbloqueados[proximoPersonagem])
         {
             proximoPersonagem++;
         }
 
-        proximoDesbloqueio = Mathf.Max(1, pontosParaDesbloquear);
+        if (pontosParaDesbloquear < 1)
+        {
+            pontosParaDesbloquear = 1;
+        }
+
+        proximoDesbloqueio = proximoPersonagem * pontosParaDesbloquear;
 
         AtualizarBotoesPersonagens();
         EscolherPersonagem(0);
         AtualizarVotos();
     }
 
+
     void Update()
     {
         AtualizarVotos();
     }
 
+
     void AtualizarVotos()
     {
         if (votoEscrito != null)
+        {
             votoEscrito.text = voto13.ToString();
+        }
     }
+
 
     void AtualizarBotoesPersonagens()
     {
-        // Desativa os botões dos personagens que ainda estão bloqueados.
-        if (botoesPersonagens == null)
+        if (botoesPersonagens == null || personagensDesbloqueados == null)
+        {
             return;
+        }
 
         for (int i = 0; i < botoesPersonagens.Length; i++)
         {
-            if (botoesPersonagens[i] != null)
+            if (botoesPersonagens[i] == null)
             {
-                botoesPersonagens[i].interactable = i < personagensDesbloqueados.Length && personagensDesbloqueados[i];
+                continue;
             }
+
+            bool desbloqueado = false;
+
+            if (i < personagensDesbloqueados.Length)
+            {
+                desbloqueado = personagensDesbloqueados[i];
+            }
+
+            botoesPersonagens[i].interactable = desbloqueado;
+
+            ColorBlock cores = botoesPersonagens[i].colors;
+
+            if (desbloqueado)
+            {
+                cores.normalColor = Color.white;
+            }
+            else
+            {
+                cores.normalColor = Color.gray;
+            }
+
+            botoesPersonagens[i].colors = cores;
         }
     }
+
 
     public void AbrirPersonagens()
     {
@@ -120,14 +187,18 @@ public class gerenciador_tudo : MonoBehaviour
         painel_personagens.SetActive(true);
     }
 
+
     public void EscolherPersonagem(int numero)
     {
         if (numero < 0 || numero >= personagens.Length)
+        {
             return;
+        }
 
-        // Impede a escolha de um personagem bloqueado.
-        if (personagensDesbloqueados != null && !personagensDesbloqueados[numero])
+        if (!personagensDesbloqueados[numero])
+        {
             return;
+        }
 
         personagemEscolhido = numero;
         spritePlayer.sprite = personagens[personagemEscolhido];
@@ -135,9 +206,13 @@ public class gerenciador_tudo : MonoBehaviour
         VoltarMenu();
     }
 
+
     public void VoltarMenu()
     {
-        painel_personagens.SetActive(false);
+        if (painel_personagens != null)
+        {
+            painel_personagens.SetActive(false);
+        }
 
         fundo.SetActive(true);
         bt_jogar.SetActive(true);
@@ -145,16 +220,25 @@ public class gerenciador_tudo : MonoBehaviour
         bt_personagens.SetActive(true);
     }
 
+
     public void Jogar()
     {
         voto13 = 0;
+
         fimDeJogo = false;
         mostrandoDesbloqueio = false;
 
         Time.timeScale = 1f;
 
         if (painelDesbloqueio != null)
+        {
             painelDesbloqueio.SetActive(false);
+        }
+
+        if (painel_personagens != null)
+        {
+            painel_personagens.SetActive(false);
+        }
 
         fundo.SetActive(false);
         bt_jogar.SetActive(false);
@@ -163,44 +247,58 @@ public class gerenciador_tudo : MonoBehaviour
 
         spritePlayer.sprite = personagens[personagemEscolhido];
 
+        // Coloca o jogador na posição inicial.
+        player.transform.position = posicaoInicialPlayer;
+
+        if (rbPlayer != null)
+        {
+            rbPlayer.linearVelocity = Vector2.zero;
+            rbPlayer.angularVelocity = 0f;
+        }
+
         player.SetActive(true);
         textoVoto.SetActive(true);
 
-        // Inicia o spawn dos obstáculos.
         if (spawnar != null)
+        {
+            spawnar.LimparObstaculos();
+            spawnar.RestaurarVelocidade();
             spawnar.IniciarSpawn();
+        }
 
         AtualizarVotos();
     }
+
 
     public void AdicionarPonto()
     {
         if (fimDeJogo || mostrandoDesbloqueio)
-            return;
-
-        if (voto13 == 13 || voto13 == 26 || voto13 == 39 || voto13 == 52)
         {
-            if (proximoPersonagem < personagens.Length)
-            {
-                 int numero = proximoPersonagem;
-
-                proximoPersonagem++;
-                proximoDesbloqueio += Mathf.Max(1, pontosParaDesbloquear);
-
-                StartCoroutine(MostrarDesbloqueio(numero));
-            }        
+            return;
         }
+
         voto13++;
 
         AtualizarVotos();
 
+        // Verifica se chegou a hora de liberar outro personagem
+        if (proximoPersonagem < personagens.Length && voto13 >= proximoDesbloqueio)
+        {
+            int numero = proximoPersonagem;
+
+            proximoPersonagem++;
+
+            proximoDesbloqueio = proximoPersonagem * pontosParaDesbloquear;
+
+            StartCoroutine(MostrarDesbloqueio(numero));
+        }
     }
+
 
     IEnumerator MostrarDesbloqueio(int numero)
     {
         mostrandoDesbloqueio = true;
 
-        // Libera o novo personagem e salva o desbloqueio.
         personagensDesbloqueados[numero] = true;
 
         PlayerPrefs.SetInt("personagemDesbloqueado_" + numero, 1);
@@ -208,41 +306,74 @@ public class gerenciador_tudo : MonoBehaviour
 
         AtualizarBotoesPersonagens();
 
-        // Mostra a imagem do personagem desbloqueado.
         if (imagemDesbloqueio != null)
+        {
             imagemDesbloqueio.sprite = personagens[numero];
+        }
 
         if (painelDesbloqueio != null)
+        {
             painelDesbloqueio.SetActive(true);
+        }
 
-        // Pausa o jogo enquanto a imagem aparece.
+        player.SetActive(false);
+
         Time.timeScale = 0f;
 
         yield return new WaitForSecondsRealtime(tempoMostrarDesbloqueio);
 
-        // Esconde a imagem e aumenta a dificuldade.
         if (painelDesbloqueio != null)
+        {
             painelDesbloqueio.SetActive(false);
+        }
+
+        player.SetActive(true);
 
         if (spawnar != null)
+        {
             spawnar.AumentarVelocidade(aumentoVelocidade);
+        }
 
         Time.timeScale = 1f;
         mostrandoDesbloqueio = false;
     }
 
-    public void ReiniciarCena()
+
+    public void PerderJogo()
     {
         if (fimDeJogo)
+        {
             return;
+        }
 
         fimDeJogo = true;
 
-        // Restaura o tempo antes de recarregar a cena.
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (spawnar != null)
+        {
+            spawnar.PararSpawn();
+            spawnar.LimparObstaculos();
+        }
+
+        if (painelDesbloqueio != null)
+        {
+            painelDesbloqueio.SetActive(false);
+        }
+
+        if (player != null)
+        {
+            player.SetActive(false);
+        }
+
+        if (textoVoto != null)
+        {
+            textoVoto.SetActive(false);
+        }
+
+        VoltarMenu();
     }
+
 
     public void Sair()
     {

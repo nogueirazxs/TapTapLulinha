@@ -1,35 +1,41 @@
-
 using UnityEngine;
 
 public class MovimentoObstaculo : MonoBehaviour
 {
+    [Header("Movimentação")]
     public float velocidade = 3f;
+
+    [Header("Limite de Destruição")]
     public float limiteEsquerdo = -12f;
 
+    [Header("Referência")]
     public SpawnObstaculo spawnar;
 
     private Rigidbody2D rb;
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     void FixedUpdate()
     {
-        if (rb == null)
+        if (rb == null || Time.timeScale == 0f)
+        {
             return;
+        }
 
-        // Atualiza a velocidade conforme a dificuldade atual.
         if (spawnar != null)
+        {
             velocidade = spawnar.velocidadeObstaculos;
+        }
 
-        // Move o obstáculo para a esquerda.
-        Vector2 destino = rb.position + Vector2.left * velocidade * Time.fixedDeltaTime;
+        Vector2 novaPosicao = rb.position + Vector2.left * velocidade * Time.fixedDeltaTime;
 
-        rb.MovePosition(destino);
+        rb.MovePosition(novaPosicao);
 
-        // Remove o obstáculo quando ele sai da tela.
         if (rb.position.x < limiteEsquerdo)
         {
             Destroy(gameObject);
