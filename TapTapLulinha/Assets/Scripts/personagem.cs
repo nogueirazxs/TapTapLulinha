@@ -6,6 +6,7 @@ public class personagem : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float forcaDoImpulso = 5f;
+    public gerenciador_tudo PONTOS;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class personagem : MonoBehaviour
         {
             // Mantém o impulso vertical consistente.
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-
+            PONTOS.AdicionarPonto();
             rb.AddForce(Vector2.up * forcaDoImpulso, ForceMode2D.Impulse);
         }
     }

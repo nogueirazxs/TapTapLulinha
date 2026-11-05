@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 44dc68d5d1d325c46b5a0154a626df21
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5999556276264761379
+    second: bt_selecpersona_0
+  - first:
+      213: 8665506720822999259
+    second: bt_selecpersona_1
+  - first:
+      213: -4265256866766926058
+    second: bt_selecpersona_2
+  - first:
+      213: -7358307478863761706
+    second: bt_selecpersona_3
+  - first:
+      213: -2088019872452628433
+    second: bt_selecpersona_4
+  - first:
+      213: 5695455080846853226
+    second: bt_selecpersona_5
+  - first:
+      213: 2947516439849532786
+    second: bt_selecpersona_6
+  - first:
+      213: 2247690802352423366
+    second: bt_selecpersona_7
+  - first:
+      213: -7533025346765730908
+    second: bt_selecpersona_8
+  - first:
+      213: 8484407907248856666
+    second: bt_selecpersona_9
+  - first:
+      213: 8914559083330431684
+    second: bt_selecpersona_10
+  - first:
+      213: -7221320953525827527
+    second: bt_selecpersona_11
+  - first:
+      213: 8406559714545542194
+    second: bt_selecpersona_12
+  - first:
+      213: 4411655540691062211
+    second: bt_selecpersona_13
+  - first:
+      213: 2303659474226485930
+    second: bt_selecpersona_14
+  - first:
+      213: 475667467963011244
+    second: bt_selecpersona_15
+  - first:
+      213: -8974026662813111056
+    second: bt_selecpersona_16
+  - first:
+      213: -3246488252388818099
+    second: bt_selecpersona_17
+  - first:
+      213: 8867162621479105463
+    second: bt_selecpersona_18
+  - first:
+      213: -3726545161783684009
+    second: bt_selecpersona_19
+  - first:
+      213: -2582376730987820472
+    second: bt_selecpersona_20
+  - first:
+      213: 3174294418948310689
+    second: bt_selecpersona_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bt_selecpersona_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328f9b075a4b24350800000000000000
+      internalID: 5999556276264761379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 74
+        width: 66
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd83a656370124870800000000000000
+      internalID: 8665506720822999259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_2
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 74
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fcf8c5a73cec4c0800000000000000
+      internalID: -4265256866766926058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_3
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 74
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dea93e755a02e990800000000000000
+      internalID: -7358307478863761706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_4
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 74
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2031822dfcd503e0800000000000000
+      internalID: -2088019872452628433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 74
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64021068325a0f40800000000000000
+      internalID: 5695455080846853226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_6
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 74
+        width: 19
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dfaded59ea7e820800000000000000
+      internalID: 2947516439849532786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_7
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 74
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1012f30e6613f10800000000000000
+      internalID: 2247690802352423366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_8
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 74
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abc30adb51557790800000000000000
+      internalID: -7533025346765730908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_9
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 74
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e55111a0caeb570800000000000000
+      internalID: 8484407907248856666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_10
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 74
+        width: 68
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca64234140e6bb70800000000000000
+      internalID: 8914559083330431684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_11
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 42
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938020c5ad6b8cb90800000000000000
+      internalID: -7221320953525827527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234a89045891aa470800000000000000
+      internalID: 8406559714545542194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_13
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd464e1759593d30800000000000000
+      internalID: 4411655540691062211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_14
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 69
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa9bb4261e38ff10800000000000000
+      internalID: 2303659474226485930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_15
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 66
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0152bba09e99600800000000000000
+      internalID: 475667467963011244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_16
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fce32eeb4ad57380800000000000000
+      internalID: -8974026662813111056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_17
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43c2e4922822f2d0800000000000000
+      internalID: -3246488252388818099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_18
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b332ea8c6d7e0b70800000000000000
+      internalID: 8867162621479105463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_19
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 66
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754de606be6a84cc0800000000000000
+      internalID: -3726545161783684009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_20
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a8c319b0e892cd0800000000000000
+      internalID: -2582376730987820472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bt_selecpersona_21
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 0
+        width: 68
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a64be5b4fb5d0c20800000000000000
+      internalID: 3174294418948310689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bt_selecpersona_0: 5999556276264761379
+      bt_selecpersona_1: 8665506720822999259
+      bt_selecpersona_10: 8914559083330431684
+      bt_selecpersona_11: -7221320953525827527
+      bt_selecpersona_12: 8406559714545542194
+      bt_selecpersona_13: 4411655540691062211
+      bt_selecpersona_14: 2303659474226485930
+      bt_selecpersona_15: 475667467963011244
+      bt_selecpersona_16: -8974026662813111056
+      bt_selecpersona_17: -3246488252388818099
+      bt_selecpersona_18: 8867162621479105463
+      bt_selecpersona_19: -3726545161783684009
+      bt_selecpersona_2: -4265256866766926058
+      bt_selecpersona_20: -2582376730987820472
+      bt_selecpersona_21: 3174294418948310689
+      bt_selecpersona_3: -7358307478863761706
+      bt_selecpersona_4: -2088019872452628433
+      bt_selecpersona_5: 5695455080846853226
+      bt_selecpersona_6: 2947516439849532786
+      bt_selecpersona_7: 2247690802352423366
+      bt_selecpersona_8: -7533025346765730908
+      bt_selecpersona_9: 8484407907248856666
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
