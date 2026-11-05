@@ -178,42 +178,17 @@ public class gerenciador_tudo : MonoBehaviour
         if (fimDeJogo || mostrandoDesbloqueio)
             return;
 
-        if (proximoPersonagem < personagens.Length && voto13 > 13)
+        if (voto13 == 13 || voto13 == 26 || voto13 == 39 || voto13 == 52)
         {
-            
-            int numero = proximoPersonagem;
+            if (proximoPersonagem < personagens.Length)
+            {
+                 int numero = proximoPersonagem;
 
-            proximoPersonagem++;
-            proximoDesbloqueio += Mathf.Max(1, pontosParaDesbloquear);
+                proximoPersonagem++;
+                proximoDesbloqueio += Mathf.Max(1, pontosParaDesbloquear);
 
-            StartCoroutine(MostrarDesbloqueio(numero));
-        }
-        if (proximoPersonagem < personagens.Length && voto13 > 26)
-        {
-            int numero = proximoPersonagem;
-
-            proximoPersonagem++;
-            proximoDesbloqueio += Mathf.Max(2, pontosParaDesbloquear);
-
-            StartCoroutine(MostrarDesbloqueio(numero));
-        }
-        if (proximoPersonagem < personagens.Length && voto13 > 39)
-        {
-            int numero = proximoPersonagem;
-
-            proximoPersonagem++;
-            proximoDesbloqueio += Mathf.Max(3, pontosParaDesbloquear);
-
-            StartCoroutine(MostrarDesbloqueio(numero));
-        }
-        if (proximoPersonagem < personagens.Length && voto13 > 52)
-        {
-            int numero = proximoPersonagem;
-
-            proximoPersonagem++;
-            proximoDesbloqueio += Mathf.Max(4, pontosParaDesbloquear);
-
-            StartCoroutine(MostrarDesbloqueio(numero));
+                StartCoroutine(MostrarDesbloqueio(numero));
+            }        
         }
         voto13++;
 
